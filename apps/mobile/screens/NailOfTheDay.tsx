@@ -494,25 +494,18 @@ export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
         <View style={styles.row}>
           <View style={styles.wheelContainer}>
             {phase !== "idle" && (
-              <>
-                <View style={styles.needleRow}>
-                  <Svg width="36" height="36" viewBox="0 0 100 100">
-                    <Defs>
-                      <RadialGradient id="sparkle-grad" cx="50%" cy="50%" r="50%">
-                        <Stop offset="0%" stopColor="#fff" stopOpacity="0.95" />
-                        <Stop offset="35%" stopColor="#E8D5CE" stopOpacity="0.85" />
-                        <Stop offset="100%" stopColor="#D4B8B1" stopOpacity="0" />
-                      </RadialGradient>
-                    </Defs>
-                    <Path d="M 50 0 L 61 39 L 100 50 L 61 61 L 50 100 L 39 61 L 0 50 L 39 39 Z" fill="url(#sparkle-grad)" />
-                  </Svg>
-                </View>
-                {phase === "spinning" && (
-                  <View style={styles.starRow}>
-                    <Text style={styles.sparkleStar}>✦</Text>
-                  </View>
-                )}
-              </>
+              <View style={styles.needleRow}>
+                <Svg width="36" height="36" viewBox="0 0 100 100">
+                  <Defs>
+                    <RadialGradient id="sparkle-grad" cx="50%" cy="50%" r="50%">
+                      <Stop offset="0%" stopColor="#fff" stopOpacity="0.95" />
+                      <Stop offset="35%" stopColor="#E8D5CE" stopOpacity="0.85" />
+                      <Stop offset="100%" stopColor="#D4B8B1" stopOpacity="0" />
+                    </RadialGradient>
+                  </Defs>
+                  <Path d="M 50 0 L 61 39 L 100 50 L 61 61 L 50 100 L 39 61 L 0 50 L 39 39 Z" fill="url(#sparkle-grad)" />
+                </Svg>
+              </View>
             )}
             <View style={styles.wheel}>
               <Animated.View
@@ -776,8 +769,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   wheelInner: { width: "100%", height: "100%", alignItems: "center", justifyContent: "center" },
-  needleRow: { position: "absolute", top: -28, left: WHEEL_SIZE / 2 - 18, width: 36, height: 36, alignItems: "center", justifyContent: "center" },
-  starRow: { position: "absolute", top: -18, left: WHEEL_SIZE / 2 - 10, width: 20, height: 20, alignItems: "center", justifyContent: "center", zIndex: 1000, elevation: 1000 },
+  needleRow: { position: "absolute", top: -16, left: WHEEL_SIZE / 2 - 18, width: 36, height: 36, alignItems: "center", justifyContent: "center", zIndex: 1000, elevation: 1000 },
+  starRow: { position: "absolute", top: -12, left: WHEEL_SIZE / 2 - 10, width: 20, height: 20, alignItems: "center", justifyContent: "center", zIndex: 1000, elevation: 1000 },
   rightPanel: { gap: spacing.sm, alignItems: "center" },
   revealCard: { gap: spacing.sm, alignItems: "center", padding: spacing.sm },
   nailWrap: { position: "relative", alignItems: "center", justifyContent: "center" },
@@ -847,7 +840,7 @@ const styles = StyleSheet.create({
   iconSaveButtonActive: { backgroundColor: palette.ink900, borderColor: palette.rose, ...shadows.glow },
   sparkleOverlay: { position: "absolute", top: 0, left: 0, right: 0, bottom: 0, alignItems: "center", justifyContent: "center", gap: 2 },
   sparkleQuestion: { fontSize: 40, fontWeight: "700", color: palette.blush, textShadowColor: "rgba(212,184,177,0.7)", textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 12 },
-  sparkleStar: { fontSize: 20, color: palette.blush, textAlign: "center", textShadowColor: "rgba(212,184,177,0.6)", textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 8 },
+  sparkleStar: { fontSize: 20, color: palette.blush, textAlign: "center", textShadowColor: "rgba(212,184,177,0.6)", textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 8, zIndex: 1000 },
   tryOnCard: { gap: spacing.sm, alignItems: "center", padding: spacing.sm, borderRadius: radii.lg, backgroundColor: alpha(palette.ink800, 0.5), borderWidth: 1, borderColor: alpha(palette.blush, 0.14) },
   tryOnTitle: { ...type.body, color: palette.blush, fontSize: 10, letterSpacing: 0.28, textTransform: "uppercase", marginBottom: 2 },
   tryOnStatus: { ...type.body, color: palette.pearl, fontSize: 12, marginTop: spacing.sm },
