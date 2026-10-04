@@ -710,7 +710,7 @@ export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
                     ]}
                   >
                     <Text style={[styles.spinButtonLabel, phase === "spinning" && styles.spinButtonLabelInactive]}>
-                      {phase === "spinning" ? spinLabel : spinAgainLabel}
+                      {phase === "spinning" ? "Върти се..." : "Завърти отново"}
                     </Text>
                     {phase === "spinning" ? (
                       <ActivityIndicator color={palette.ink900} style={styles.spinButtonLoader} />
