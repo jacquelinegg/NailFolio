@@ -13,6 +13,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 import { config, getApiUrl } from "../config";
 import { debugLog } from "../utils/debugLogs";
+import { generatePalette } from "@/lib/palette";
 import type { Artist, ArtistAwareDesign, ComplexityLevel, Look, NailOfTheDayDesign, PriceEstimate, SessionStatusView } from "@/lib/types";
 
 export class ClientApiError extends Error {
@@ -241,7 +242,7 @@ export async function generateNailOfTheDay(
 
 function buildLocalFallback(shape: string, tags: string[], salt: number): { design: NailOfTheDayDesign; nailImageUrl: string | null } {
   const seed = hashString([shape, ...tags, salt].join("|"));
-  const palette = generateLocalPalette(seed);
+  const palette = generatePalette(seed);
   const pattern = pickLocalPattern(seed);
   const finish = pickLocalFinish(seed);
   const design: NailOfTheDayDesign = {
@@ -269,27 +270,6 @@ function hashString(value: string): number {
   return Math.abs(hash);
 }
 
-function generateLocalPalette(seed: number): string[] {
-  const modes = [
-    () => [`hsl(${seed % 360}, 55%, 32%)`, `hsl(${(seed + 40) % 360}, 60%, 38%)`, `hsl(${(seed + 80) % 360}, 50%, 28%)`],
-    () => [`hsl(${seed % 360}, 45%, 70%)`, `hsl(${(seed + 30) % 360}, 50%, 75%)`, `hsl(${(seed + 60) % 360}, 40%, 65%)`],
-  ];
-  const mode = seed % modes.length;
-  const hex = (hsl: string) => {
-    const m = hsl.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
-    if (!m) return "#E8D5CE";
-    const [, h, s, l] = m.map(Number);
-    const a = s / 100;
-    const b = l / 100;
-    const k = (n: number) => (n + h / 30) % 12;
-    const f = (n: number) => b - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
-    const toHex = (v: number) => Math.round(Math.max(0, Math.min(1, v)) * 255).toString(16).padStart(2, "0");
-    return `#${toHex(f(0))}${toHex(f(8))}${toHex(f(4))}`;
-  };
-  const selected = modes[mode]();
-  return selected.map(hex);
-}
-
 function pickLocalPattern(seed: number): string {
   const patterns = ["french", "gradient", "glitter_accent", "chrome_accent", "matte_overlay", "gloss_highlight", "geometric", "dots", "marble", "watercolor", "fishnet", "sparkle", "lace", "chrome_heart", "galaxy", "paint_brush", "gloss_band", "metallic_stripe", "checker", "floral", "abstract", "minimalist", "retro", "art_deco", "gradient_glow", "matte_chrome", "glitter_rain", "starry_night"];
   return patterns[seed % patterns.length] ?? "gradient";
@@ -301,6 +281,8 @@ function pickLocalFinish(seed: number): string {
 }
 
 function buildLocalLayers(pattern: string, colors: string[], finish: string) {
+  const accent = colors[1] ?? "#D4B8B1";
+  const secondary = colors[2] ?? "#B99FA9";
   const base = { type: "fill", colors: [colors[0] ?? "#E8D5CE"], opacity: 1 } as const;
   const layers = [base];
   if (pattern === "french") layers.push({ type: "stroke", pattern: "french_tip", colors: [colors[1] ?? "#FFFFFF"], opacity: 0.95, width: 6 } as const);
@@ -309,14 +291,14 @@ function buildLocalLayers(pattern: string, colors: string[], finish: string) {
   if (pattern === "chrome_accent" || finish === "chrome") layers.push({ type: "fill", pattern: "chrome_band", colors: [colors[1] ?? "#C0C0C0"], opacity: 0.85 } as const);
   if (pattern === "matte_overlay" || finish === "matte") layers.push({ type: "fill", pattern: "matte_overlay", colors: [colors[1] ?? "#F5E6E0"], opacity: 0.9 } as const);
   if (pattern === "gloss_highlight" || finish === "glossy") layers.push({ type: "fill", pattern: "gloss_highlight", colors: [colors[1] ?? "#FFFFFF"], opacity: 0.9 } as const);
-  if (pattern === "fishnet") layers.push({ type: "pattern", pattern: "fishnet", colors: [colors[1] ?? accent, colors[2] ?? secondary], opacity: 0.85 } as const);
-  if (pattern === "sparkle") layers.push({ type: "pattern", pattern: "sparkle", colors: [colors[1] ?? accent, colors[2] ?? secondary], opacity: 0.9 } as const);
-  if (pattern === "dots") layers.push({ type: "pattern", pattern: "dots", colors: [colors[1] ?? accent], opacity: 0.9 } as const);
-  if (pattern === "geometric") layers.push({ type: "pattern", pattern: "geometric", colors: [colors[1] ?? accent], opacity: 0.85 } as const);
-  if (pattern === "lace") layers.push({ type: "pattern", pattern: "lace", colors: [colors[1] ?? accent], opacity: 0.8 } as const);
-  if (pattern === "metallic_stripe") layers.push({ type: "pattern", pattern: "metallic_stripe", colors: [colors[1] ?? accent], opacity: 0.9 } as const);
+  if (pattern === "fishnet") layers.push({ type: "pattern", pattern: "fishnet", colors: [accent, secondary], opacity: 0.85 } as const);
+  if (pattern === "sparkle") layers.push({ type: "pattern", pattern: "sparkle", colors: [accent, secondary], opacity: 0.9 } as const);
+  if (pattern === "dots") layers.push({ type: "pattern", pattern: "dots", colors: [accent], opacity: 0.9 } as const);
+  if (pattern === "geometric") layers.push({ type: "pattern", pattern: "geometric", colors: [accent], opacity: 0.85 } as const);
+  if (pattern === "lace") layers.push({ type: "pattern", pattern: "lace", colors: [accent], opacity: 0.8 } as const);
+  if (pattern === "metallic_stripe") layers.push({ type: "pattern", pattern: "metallic_stripe", colors: [accent], opacity: 0.9 } as const);
   if (pattern === "gloss_band") layers.push({ type: "pattern", pattern: "gloss_band", colors: [colors[1] ?? "#FFFFFF"], opacity: 0.9 } as const);
-  if (["checker", "dots", "geometric", "lace", "metallic_stripe", "gloss_band"].includes(pattern)) layers.push({ type: "pattern", pattern, colors: [colors[1] ?? accent], opacity: 0.85 } as const);
+  if (["checker", "dots", "geometric", "lace", "metallic_stripe", "gloss_band"].includes(pattern)) layers.push({ type: "pattern", pattern, colors: [accent], opacity: 0.85 } as const);
   if (["floral", "abstract", "minimalist", "retro", "art_deco", "gradient_glow", "matte_chrome", "glitter_rain", "starry_night"].includes(pattern)) layers.push({ type: "fill", pattern, colors: colors.slice(0, 2), opacity: 0.85 } as const);
   return layers;
 }
