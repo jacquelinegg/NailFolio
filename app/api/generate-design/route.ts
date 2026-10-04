@@ -120,8 +120,12 @@ function capitalize(value: string): string {
 
 function generatePalette(seed: number, customPrompt?: string): string[] {
   const modes = [
-    () => [`hsl(${seed % 360}, 55%, 32%)`, `hsl(${(seed + 40) % 360}, 60%, 38%)`, `hsl(${(seed + 80) % 360}, 50%, 28%)`],
-    () => [`hsl(${seed % 360}, 45%, 70%)`, `hsl(${(seed + 30) % 360}, 50%, 75%)`, `hsl(${(seed + 60) % 360}, 40%, 65%)`],
+    () => [`hsl(${seed % 360}, 55%, 32%)`, `hsl(${(seed + 40) % 360}, 60%, 38%)`, `hsl(${(seed + 80) % 360}, 50%, 28%)`, `hsl(${(seed + 120) % 360}, 45%, 42%)`],
+    () => [`hsl(${seed % 360}, 45%, 70%)`, `hsl(${(seed + 30) % 360}, 50%, 75%)`, `hsl(${(seed + 60) % 360}, 40%, 65%)`, `hsl(${(seed + 90) % 360}, 35%, 80%)`],
+    () => [`hsl(${seed % 360}, 70%, 45%)`, `hsl(${(seed + 50) % 360}, 80%, 50%)`, `hsl(${(seed + 100) % 360}, 60%, 40%)`, `hsl(${(seed + 150) % 360}, 75%, 55%)`],
+    () => [`hsl(${seed % 360}, 30%, 25%)`, `hsl(${(seed + 60) % 360}, 40%, 30%)`, `hsl(${(seed + 120) % 360}, 35%, 35%)`, `hsl(${(seed + 180) % 360}, 25%, 20%)`],
+    () => [`hsl(${seed % 360}, 90%, 60%)`, `hsl(${(seed + 45) % 360}, 95%, 65%)`, `hsl(${(seed + 90) % 360}, 85%, 55%)`, `hsl(${(seed + 135) % 360}, 90%, 70%)`],
+    () => [`hsl(${seed % 360}, 50%, 50%)`, `hsl(${(seed + 70) % 360}, 55%, 45%)`, `hsl(${(seed + 140) % 360}, 60%, 40%)`, `hsl(${(seed + 210) % 360}, 45%, 55%)`],
   ];
   const mode = seed % modes.length;
   const hex = (hsl: string): string => {
