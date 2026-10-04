@@ -247,7 +247,7 @@ function buildDesign(shape: string, tags: string[], customPrompt?: string, salt?
   const primaryTag = tags[0] ?? "calm";
   const pattern = pickFromHash(baseSeed, PATTERNS);
   const finish = pickFromHash(baseSeed + 1, FINISHES);
-  const palette = generatePalette(baseSeed, customPrompt);
+  const palette = generatePalette(baseSeed);
   const complexity = (pickFromHash(baseSeed % 3, ["simple", "medium", "complex"] as const) as "simple" | "medium" | "complex");
   const promptSuffix = customPrompt ? " — " + customPrompt.trim() : "";
   const replacedPattern = applyReplacements(pattern, customPrompt ?? "", "pattern");

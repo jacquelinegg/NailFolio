@@ -125,7 +125,7 @@ const PALETTE_MODES: readonly PaletteMode[] = [
 ] as const;
 
 export function generatePalette(seed: number): string[] {
-  const mode = PALETTE_MODES[Math.abs(seed) % PALETTE_MODES.length];
+  const mode = PALETTE_MODES[Math.abs(seed) % PALETTE_MODES.length]!;
   const hslStrings = mode.generator(seed);
 
   const hex = (hsl: string): string => {
