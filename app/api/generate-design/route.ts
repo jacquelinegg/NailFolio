@@ -113,6 +113,11 @@ function pickFromHash(hash: number, options: readonly string[]): string {
   return options[Math.abs(hash) % options.length] ?? options[0] ?? "";
 }
 
+function capitalize(value: string): string {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
 function generatePalette(seed: number, customPrompt?: string): string[] {
   const modes = [
     () => [`hsl(${seed % 360}, 55%, 32%)`, `hsl(${(seed + 40) % 360}, 60%, 38%)`, `hsl(${(seed + 80) % 360}, 50%, 28%)`],
@@ -247,7 +252,18 @@ function buildDesign(shape: string, tags: string[], customPrompt?: string, salt?
   const replacedPattern = applyReplacements(pattern, customPrompt ?? "", "pattern");
   const replacedFinish = applyReplacements(finish, customPrompt ?? "", "finish");
   const motifs = applyMotifReplacements(fallbackMotifs(replacedPattern, palette, variationSeed), customPrompt ?? "");
-  const name = replacedPattern.replace(/_/g, " ") + " " + shape + promptSuffix;
+  const name = pickFromHash(baseSeed + 2, [
+    replacedPattern.replace(/_/g, " ") + " " + shape,
+    capitalize(primaryTag) + " " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    capitalize(primaryTag) + " " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Velvet " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Crystal " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Neon " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Midnight " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Golden " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Ethereal " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Noir " + replacedPattern.replace(/_/g, " ") + " " + shape,
+  ]) + promptSuffix;
   const description = "A " + replacedFinish + " " + shape + " manicure with " + replacedPattern.replace(/_/g, " ") + " texture, finished in a " + replacedFinish + " sheen.";
   const imagePrompt = "Single detached " + shape + "-shaped press-on nail. " + replacedPattern.replace(/_/g, " ") + " art in " + replacedFinish + " gel polish; palette " + palette.slice(0, 4).join(", ") + "; focal details " + motifs.map((motif) => motif.kind).join(", ") + ". Elegant salon nail art, no hands or fingers.";
   const layers = buildLayers(replacedPattern, palette, complexity, variationSeed, replacedFinish);
