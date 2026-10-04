@@ -217,7 +217,9 @@
     "picked": "Picked style",
     "priceLine": "Starting at",
     "cta": "Try it with a photo",
-    "empty": "No styles published yet."
+    "empty": "No styles published yet.",
+    "spinAgain": "Spin Again",
+    "spinning": "Spinning..."
   },
   "looks": {
     "portfolioCountLabel": "Portfolio:"

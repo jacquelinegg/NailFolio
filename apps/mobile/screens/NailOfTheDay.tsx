@@ -5,6 +5,7 @@ import * as ImagePicker from "expo-image-picker";
 import Svg, { Circle, Defs, G, LinearGradient, Mask, Path, Stop, Filter, FeGaussianBlur, FeMerge, FeMergeNode, RadialGradient } from "react-native-svg";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import { useLocale } from "../src/i18n/LocaleProvider";
 import { PearlButton } from "../src/components/PearlButton";
 import { generateNailOfTheDay, renderTryOn, uploadHandPhoto } from "../src/lib/clientApi";
 import { alpha, palette, radii, shadows, spacing, type, fontFamilies } from "../src/theme";
@@ -181,6 +182,7 @@ const WheelIcon = memo(function WheelIcon({ index, active }: { index: number; ac
 });
 
 export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
+  const { t } = useLocale();
   const [phase, setPhase] = useState<Phase>("idle");
   const [shape, setShape] = useState<Shape>("almond");
   const [design, setDesign] = useState<NailOfTheDayDesign | null>(null);
@@ -706,7 +708,7 @@ export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
                     ]}
                   >
                     <Text style={[styles.spinButtonLabel, phase === "spinning" && styles.spinButtonLabelInactive]}>
-                      {phase === "spinning" ? "Spinning..." : "Spin Again"}
+                      {phase === "spinning" ? t.notd.spinning : t.notd.spinAgain}
                     </Text>
                     {phase === "spinning" ? (
                       <ActivityIndicator color={palette.ink900} style={styles.spinButtonLoader} />
