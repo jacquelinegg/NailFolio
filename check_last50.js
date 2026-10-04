@@ -1,0 +1,10 @@
+const fs = require('fs');
+const buf = fs.readFileSync('D:/NailFolio/app/api/generate-design/route.ts');
+const text = buf.toString('utf8');
+const lines = text.split(/\r?\n/);
+const line = lines[157];
+const last50 = line.substring(line.length - 50);
+console.log('Last 50 chars:');
+console.log(JSON.stringify(last50));
+console.log('---');
+console.log(last50);

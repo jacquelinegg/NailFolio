@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "NailFolio Artist",
+    "slug": "nailfolio-artist",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "nailfolio",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nailfolio.artist",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Photograph your nail work to build your portfolio.",
+        "NSPhotoLibraryUsageDescription": "Attach photos of your nail work to your portfolio."
+      }
+    },
+    "android": {
+      "package": "com.nailfolio.artist",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "192.168.0.100",
+              "pathPrefix": "/confirm"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "plugins": ["expo-image-picker"]
+  }
+}

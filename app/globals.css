@@ -1,0 +1,478 @@
+﻿@import "tailwindcss";
+
+@theme {
+  /* Midnight Velvet — the palette the mockup established. */
+  --color-ink-950: #17151f;
+  --color-ink-900: #1e1b2e;
+  --color-ink-800: #2d3246;
+  --color-ink-700: #3a3f56;
+  --color-plum-900: #4a3b47;
+  --color-blush-300: #e8d5ce;
+  --color-blush-500: #d4b8b1;
+  --color-ash-400: #9c94a0;
+  --color-rose-400: #b99fa9;
+  --color-pearl-50: #f9f6f0;
+  --color-mint-400: #6ee7c7;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ink-950);
+  }
+
+  body {
+    min-height: 100dvh;
+    color: var(--color-pearl-50);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--color-ink-900);
+    background-image:
+      radial-gradient(1100px 620px at 12% -8%, rgba(212, 184, 177, 0.16), transparent 60%),
+      radial-gradient(900px 520px at 96% 6%, rgba(156, 148, 160, 0.14), transparent 60%),
+      radial-gradient(1000px 600px at 22% 100%, rgba(74, 59, 71, 0.5), transparent 65%),
+      linear-gradient(180deg, #2d3246 0%, #1e1b2e 52%, #17151f 100%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: rgba(212, 184, 177, 0.3);
+  }
+}
+
+@layer components {
+  /* Ambient plum field. Sits behind everything, never intercepts taps. */
+  .aura {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 45% at 12% 8%, rgba(212, 184, 177, 0.5), transparent 65%),
+      radial-gradient(45% 40% at 92% 28%, rgba(156, 148, 160, 0.45), transparent 65%),
+      radial-gradient(60% 45% at 25% 92%, rgba(232, 213, 206, 0.3), transparent 65%),
+      radial-gradient(45% 40% at 80% 80%, rgba(74, 59, 71, 0.85), transparent 70%);
+    background-size: 120% 120%;
+    animation: nf-drift 22s ease-in-out infinite;
+  }
+
+  /* Static glints scattered through the field, breathing on a slow cycle. */
+  .aura::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1.6px 1.6px at 12% 18%, rgba(249, 246, 240, 0.95), transparent 100%),
+      radial-gradient(1.4px 1.4px at 27% 63%, rgba(232, 213, 206, 0.8), transparent 100%),
+      radial-gradient(1.8px 1.8px at 41% 11%, rgba(249, 246, 240, 0.7), transparent 100%),
+      radial-gradient(1.3px 1.3px at 58% 37%, rgba(212, 184, 177, 0.9), transparent 100%),
+      radial-gradient(1.7px 1.7px at 73% 22%, rgba(249, 246, 240, 0.8), transparent 100%),
+      radial-gradient(1.4px 1.4px at 88% 47%, rgba(232, 213, 206, 0.75), transparent 100%),
+      radial-gradient(1.5px 1.5px at 6% 82%, rgba(212, 184, 177, 0.7), transparent 100%),
+      radial-gradient(1.7px 1.7px at 34% 91%, rgba(249, 246, 240, 0.65), transparent 100%),
+      radial-gradient(1.3px 1.3px at 66% 78%, rgba(232, 213, 206, 0.85), transparent 100%),
+      radial-gradient(1.6px 1.6px at 95% 88%, rgba(249, 246, 240, 0.6), transparent 100%),
+      radial-gradient(1.4px 1.4px at 46% 52%, rgba(212, 184, 177, 0.75), transparent 100%),
+      radial-gradient(1.5px 1.5px at 82% 60%, rgba(249, 246, 240, 0.55), transparent 100%);
+    animation: nf-glint 6s ease-in-out infinite;
+  }
+
+  /* Sticky site chrome. Deliberately near-transparent: it floats over the
+     sparkle field like the artist app's header does, picking up only enough
+     tint and blur to keep the links legible over a bright sparkle. */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(232, 213, 206, 0.14);
+    background: rgba(23, 21, 31, 0.55);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  @media (min-width: 768px) {
+    .site-header {
+      background: rgba(23, 21, 31, 0.4);
+    }
+  }
+
+  /* Single-row navigation on narrow screens rather than a three-line stack.
+     `min-width: 0` is load-bearing: a flex item defaults to `min-width: auto`,
+     which is its min-content width. Without this the links refuse to shrink,
+     `overflow-x: auto` never engages, and the header pushes wider than a
+     phone viewport. */
+  .site-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav > * {
+    flex: 0 0 auto;
+  }
+
+  /* Horizontal rail of portfolio looks.
+     Same reasoning as `.site-nav`: a strip of cards has to scroll on a phone
+     rather than wrap, and `min-width: 0` is load-bearing for the same reason it
+     is there — without it the flex children refuse to shrink below their
+     min-content width and the rail pushes wider than the viewport.
+     `scroll-snap-type` makes each card land squarely, and the hidden scrollbar
+     keeps the affordance in the partially visible next card rather than in a
+     chrome bar the pearl palette would have to fight. */
+  .look-rail {
+    display: flex;
+    gap: 0.75rem;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.25rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .look-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .look-rail > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  /* Card with a 1px gradient hairline instead of a flat border. */
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    padding: 22px;
+    background:
+      linear-gradient(160deg, rgba(45, 50, 70, 0.72), rgba(30, 27, 46, 0.72)) padding-box,
+      linear-gradient(150deg, rgba(232, 213, 206, 0.55), rgba(212, 184, 177, 0.12) 45%, rgba(156, 148, 160, 0.4)) border-box;
+    border: 1px solid transparent;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 18px 44px -32px rgba(0, 0, 0, 0.9);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(110% 80% at 0% 0%, rgba(255, 255, 255, 0.14), transparent 58%);
+    opacity: 0.7;
+    transition: opacity 0.35s ease;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      0 26px 60px -34px rgba(0, 0, 0, 0.95),
+      0 0 60px -40px rgba(212, 184, 177, 0.8);
+  }
+
+  /* Pearl gradient with a travelling shine. */
+  .btn-pearl {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font: 500 15px var(--font-sans);
+    color: var(--color-ink-900);
+    background: linear-gradient(135deg, #f9f6f0, #e8d5ce 45%, #d4b8b1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 0 28px -8px rgba(212, 184, 177, 0.85);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .btn-pearl:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      0 0 40px -6px rgba(212, 184, 177, 0.95);
+  }
+
+  .btn-pearl::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.12) 45%,
+      transparent 52%
+    );
+  }
+
+  .btn-pearl::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: nf-sweep 4.5s ease-in-out infinite;
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font: 500 15px var(--font-sans);
+    color: var(--color-pearl-50);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(232, 213, 206, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(232, 213, 206, 0.65);
+  }
+
+  .btn-ghost.saved,
+  .btn-ghost:has(.text-blush-300) {
+    background: rgba(30, 27, 46, 0.8);
+    border-color: rgba(212, 184, 177, 0.5);
+    color: var(--color-pearl-50);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 0 20px -8px rgba(0, 0, 0, 0.6);
+  }
+
+  .pearl-text {
+    background: linear-gradient(115deg, #f9f6f0 8%, #e8d5ce 38%, #d4b8b1 62%, #b99fa9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Stylised nail used as decoration when no portfolio image is available. */
+  .nail {
+    width: 34px;
+    height: 66px;
+    border-radius: 18px 18px 12px 12px;
+    background: linear-gradient(160deg, #ffffff 0%, #f0d8d0 32%, #b99fa9 100%);
+    box-shadow:
+      inset -3px -5px 9px rgba(74, 59, 71, 0.3),
+      inset 1px 2px 4px rgba(255, 255, 255, 0.7),
+      0 6px 14px rgba(30, 27, 46, 0.4);
+  }
+
+  .nail:nth-child(2) { height: 76px; }
+  .nail:nth-child(3) { height: 84px; }
+  .nail:nth-child(4) { height: 74px; }
+  .nail:nth-child(5) { height: 60px; transform: rotate(-8deg); }
+
+  /* Example hand shot. The photograph is a cut-out, so there is no frame worth
+     drawing around it — a hard border on mostly transparent pixels reads as an
+     empty box. Instead the hand floats on a plum aura, catches the same
+     travelling pearl shine the buttons use, and picks up a rim light. */
+  .hand-shot {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 26rem;
+    margin-inline: auto;
+    isolation: isolate;
+  }
+
+  .hand-shot::before {
+    content: "";
+    position: absolute;
+    inset: -22% -6%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(56% 50% at 50% 48%, rgba(212, 184, 177, 0.3), transparent 68%),
+      radial-gradient(38% 40% at 22% 72%, rgba(232, 213, 206, 0.16), transparent 70%),
+      radial-gradient(40% 42% at 80% 26%, rgba(156, 148, 160, 0.2), transparent 70%);
+    filter: blur(8px);
+    animation: nf-breathe 7.5s ease-in-out infinite;
+  }
+
+  /* `width: 100%` plus `height: auto` keeps the box exactly the image's box,
+     which is what lets the shine below be masked by the photograph's own
+     alpha and land on the hand instead of on the empty background. */
+  .hand-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Muted, not tinted. `sepia` is kept very low on purpose: at 0.14 it dragged
+       blue 6 levels below green on its own, which is beige rather than pink, and
+       most of the warmth came from there rather than from the veil. `brightness`
+       is what takes the highlights off pure white — the brightest pixel lands
+       near 235 instead of 255. */
+    filter:
+      sepia(0.05) saturate(1.08) hue-rotate(-3deg) brightness(0.92)
+      drop-shadow(0 16px 30px rgba(11, 10, 15, 0.55))
+      drop-shadow(0 0 1px rgba(249, 246, 240, 0.4))
+      drop-shadow(0 0 20px rgba(212, 184, 177, 0.25));
+  }
+
+  /* Blush veil over the hand. `color` takes the veil's hue and saturation while
+     keeping the photograph's luminosity, so the skin keeps its shading and the
+     result reads as a softened white rather than a darker one — `multiply` was
+     measured and lands on beige, dragging blue below green.
+     The strength is deliberately low: 0.26 holds chroma at about 9 where the
+     earlier 0.55 pushed it to 17 and read as a rose wash. Raise this one number
+     to strengthen it. Masked by the same asset, so the background is untouched. */
+  .hand-shot__tint {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(185, 159, 169, 0.26);
+    mix-blend-mode: color;
+    -webkit-mask-image: url("/hand.png");
+    mask-image: url("/hand.png");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  .dropzone:hover .hand-shot img {
+    filter:
+      sepia(0.05) saturate(1.08) hue-rotate(-3deg) brightness(0.95)
+      drop-shadow(0 18px 34px rgba(11, 10, 15, 0.6))
+      drop-shadow(0 0 1px rgba(249, 246, 240, 0.5))
+      drop-shadow(0 0 30px rgba(212, 184, 177, 0.4));
+  }
+}
+
+@keyframes nf-sweep {
+  0% { left: -60%; }
+  60%, 100% { left: 130%; }
+}
+
+@keyframes nf-glint {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes nf-drift {
+  to { background-position: 8% 6%; }
+}
+
+@keyframes nf-spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The hand shot drifts on a slow cycle so it reads as a photograph sitting in
+   the page rather than a flat image pasted on it. Sub-degree rotation, because
+   a cut-out that visibly tilts looks broken rather than alive. */
+@keyframes nf-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(-0.5deg); }
+}
+
+@keyframes nf-breathe {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/**
+ * Mirrors `Sparkle.tsx` on mobile: fade `peak * 0.2` -> `peak` while scaling
+ * 0.8 -> 1.1, eased in and out. Tailwind's own `animate-pulse` cannot be used
+ * here because its keyframes hardcode the opacity range, which would discard
+ * the per-sparkle peak this component varies for depth.
+ */
+@keyframes nf-sparkle {
+  0%, 100% { opacity: calc(var(--nf-sparkle-peak, 0.5) * 0.2); transform: scale(0.8); }
+  50% { opacity: var(--nf-sparkle-peak, 0.5); transform: scale(1.1); }
+}
+
+@keyframes nf-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.35); opacity: 0.15; }
+}
+
+.nf-sparkle {
+  transform-origin: center;
+  animation: nf-sparkle 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.nf-spin {
+  animation: nf-spin-slow 1.4s linear infinite;
+}
+
+/* Range input drives the before/after divider; keep the thumb large enough for touch. */
+.compare-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.compare-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 2px solid white;
+  background: #0b0a0f99;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 45%);
+}
+
+.compare-range::-moz-range-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 2px solid white;
+  background: #0b0a0f99;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 45%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura { animation: none; }
+  .aura::after { animation: none; opacity: 0.6; }
+  .nf-sparkle { animation: none; opacity: var(--nf-sparkle-peak, 0.5); }
+  .btn-pearl::after { animation: none; display: none; }
+  .card, .btn-pearl, .btn-ghost, .card::before { transition: none; }
+  .card:hover, .btn-pearl:hover, .btn-ghost:hover { transform: none; }
+  /* The glow and the rim light stay — they carry the styling, not the motion. */
+  .hand-shot img, .hand-shot::before { animation: none; }
+  .hand-shot::after { animation: none; display: none; }
+}
