@@ -291,12 +291,12 @@ function generateLocalPalette(seed: number): string[] {
 }
 
 function pickLocalPattern(seed: number): string {
-  const patterns = ["french", "gradient", "glitter_accent", "chrome_accent", "matte_overlay", "gloss_highlight", "geometric", "dots", "marble", "watercolor", "fishnet", "sparkle"];
+  const patterns = ["french", "gradient", "glitter_accent", "chrome_accent", "matte_overlay", "gloss_highlight", "geometric", "dots", "marble", "watercolor", "fishnet", "sparkle", "lace", "chrome_heart", "galaxy", "paint_brush", "gloss_band", "metallic_stripe", "checker", "floral", "abstract", "minimalist", "retro", "art_deco", "gradient_glow", "matte_chrome", "glitter_rain", "starry_night"];
   return patterns[seed % patterns.length] ?? "gradient";
 }
 
 function pickLocalFinish(seed: number): string {
-  const finishes = ["glossy", "matte", "metallic", "chrome", "pearl", "shimmer", "jelly", "sheer", "cream"];
+  const finishes = ["glossy", "matte", "metallic", "chrome", "pearl", "shimmer", "jelly", "sheer", "satin", "velvet", "iridescent", "holographic", "matte_metallic", "gloss_chrome", "pearl_shimmer", "cream"];
   return finishes[seed % finishes.length] ?? "glossy";
 }
 
@@ -316,17 +316,20 @@ function buildLocalLayers(pattern: string, colors: string[], finish: string) {
   if (pattern === "lace") layers.push({ type: "pattern", pattern: "lace", colors: [colors[1] ?? accent], opacity: 0.8 } as const);
   if (pattern === "metallic_stripe") layers.push({ type: "pattern", pattern: "metallic_stripe", colors: [colors[1] ?? accent], opacity: 0.9 } as const);
   if (pattern === "gloss_band") layers.push({ type: "pattern", pattern: "gloss_band", colors: [colors[1] ?? "#FFFFFF"], opacity: 0.9 } as const);
+  if (["checker", "dots", "geometric", "lace", "metallic_stripe", "gloss_band"].includes(pattern)) layers.push({ type: "pattern", pattern, colors: [colors[1] ?? accent], opacity: 0.85 } as const);
+  if (["floral", "abstract", "minimalist", "retro", "art_deco", "gradient_glow", "matte_chrome", "glitter_rain", "starry_night"].includes(pattern)) layers.push({ type: "fill", pattern, colors: colors.slice(0, 2), opacity: 0.85 } as const);
   return layers;
 }
 
 function buildLocalTexture(pattern: string, finish: string): string {
   if (pattern === "marble") return "marble";
   if (pattern === "watercolor" || pattern === "galaxy") return "watercolor";
-  if (finish === "matte" || finish === "matte_overlay") return "matte";
-  if (finish === "metallic" || finish === "metallic_stripe" || finish === "chrome") return "chrome";
-  if (finish === "glossy" || finish === "gloss_highlight" || finish === "gloss_band" || finish === "jelly" || finish === "sheer") return "gloss";
+  if (finish === "matte" || finish === "matte_overlay" || finish === "matte_chrome" || finish === "matte_metallic") return "matte";
+  if (finish === "metallic" || finish === "metallic_stripe" || finish === "chrome" || finish === "gloss_chrome" || finish === "iridescent" || finish === "holographic") return "chrome";
+  if (finish === "glossy" || finish === "gloss_highlight" || finish === "gloss_band" || finish === "jelly" || finish === "sheer" || finish === "satin" || finish === "velvet" || finish === "pearl_shimmer") return "gloss";
   if (finish === "shimmer" || finish === "pearl" || finish === "cream") return "gloss";
-  if (pattern === "fishnet" || pattern === "sparkle" || pattern === "glitter" || pattern === "glitter_accent") return "gloss";
+  if (pattern === "fishnet" || pattern === "sparkle" || pattern === "glitter" || pattern === "glitter_accent" || pattern === "glitter_rain" || pattern === "starry_night") return "gloss";
+  if (pattern === "gradient_glow") return "gloss";
   return "smooth";
 }
 

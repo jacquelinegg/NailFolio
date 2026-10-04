@@ -25,14 +25,27 @@ const PATTERNS = [
   "matte_overlay",
   "gloss_highlight",
   "geometric",
-  "lace",
+  "dots",
+  "marble",
   "watercolor",
+  "fishnet",
+  "sparkle",
+  "lace",
   "chrome_heart",
   "galaxy",
   "paint_brush",
   "gloss_band",
-  "fishnet",
-  "sparkle",
+  "metallic_stripe",
+  "checker",
+  "floral",
+  "abstract",
+  "minimalist",
+  "retro",
+  "art_deco",
+  "gradient_glow",
+  "matte_chrome",
+  "glitter_rain",
+  "starry_night",
 ] as const;
 
 const FINISHES = [
@@ -45,6 +58,13 @@ const FINISHES = [
   "shimmer",
   "jelly",
   "sheer",
+  "satin",
+  "velvet",
+  "iridescent",
+  "holographic",
+  "matte_metallic",
+  "gloss_chrome",
+  "pearl_shimmer",
   "paint_brush",
   "gloss_highlight",
   "matte_overlay",
@@ -161,17 +181,20 @@ function buildLayers(pattern: string, palette: string[], complexity: string, see
   if (pattern === "lace") layers.push({ type: "pattern", pattern: "lace", colors: [palette[1] ?? "#D4B8B1"], opacity: 0.8 });
   if (pattern === "metallic_stripe") layers.push({ type: "pattern", pattern: "metallic_stripe", colors: [palette[1] ?? "#D4B8B1"], opacity: 0.9 });
   if (pattern === "gloss_band") layers.push({ type: "pattern", pattern: "gloss_band", colors: [palette[1] ?? "#FFFFFF"], opacity: 0.9 });
+  if (["checker", "dots", "geometric", "lace", "metallic_stripe", "gloss_band"].includes(pattern)) layers.push({ type: "pattern", pattern, colors: [palette[1] ?? "#D4B8B1"], opacity: 0.85 });
+  if (["floral", "abstract", "minimalist", "retro", "art_deco", "gradient_glow", "matte_chrome", "glitter_rain", "starry_night"].includes(pattern)) layers.push({ type: "fill", pattern, colors: palette.slice(0, 2), opacity: 0.85 });
   return layers;
 }
 
 function buildTexture(pattern: string, finish: string): string {
   if (pattern === "marble") return "marble";
   if (pattern === "watercolor" || pattern === "galaxy") return "watercolor";
-  if (finish === "matte" || finish === "matte_overlay") return "matte";
-  if (finish === "metallic" || finish === "metallic_stripe" || finish === "chrome") return "chrome";
-  if (finish === "glossy" || finish === "gloss_highlight" || finish === "gloss_band" || finish === "jelly" || finish === "sheer") return "gloss";
+  if (finish === "matte" || finish === "matte_overlay" || finish === "matte_chrome" || finish === "matte_metallic") return "matte";
+  if (finish === "metallic" || finish === "metallic_stripe" || finish === "chrome" || finish === "gloss_chrome" || finish === "iridescent" || finish === "holographic") return "chrome";
+  if (finish === "glossy" || finish === "gloss_highlight" || finish === "gloss_band" || finish === "jelly" || finish === "sheer" || finish === "satin" || finish === "velvet" || finish === "pearl_shimmer") return "gloss";
   if (finish === "shimmer" || finish === "pearl" || finish === "cream") return "gloss";
-  if (pattern === "fishnet" || pattern === "sparkle" || pattern === "glitter" || pattern === "glitter_accent") return "gloss";
+  if (pattern === "fishnet" || pattern === "sparkle" || pattern === "glitter" || pattern === "glitter_accent" || pattern === "glitter_rain" || pattern === "starry_night") return "gloss";
+  if (pattern === "gradient_glow") return "gloss";
   return "smooth";
 }
 
