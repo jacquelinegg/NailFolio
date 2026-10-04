@@ -253,9 +253,8 @@ function buildDesign(shape: string, tags: string[], customPrompt?: string, salt?
   const replacedFinish = applyReplacements(finish, customPrompt ?? "", "finish");
   const motifs = applyMotifReplacements(fallbackMotifs(replacedPattern, palette, variationSeed), customPrompt ?? "");
   const name = pickFromHash(baseSeed + 2, [
-    replacedPattern.replace(/_/g, " ") + " " + shape,
-    capitalize(primaryTag) + " " + replacedFinish.replace(/_/g, " ") + " " + shape,
     capitalize(primaryTag) + " " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    capitalize(primaryTag) + " " + replacedFinish.replace(/_/g, " ") + " " + shape,
     "Velvet " + replacedPattern.replace(/_/g, " ") + " " + shape,
     "Crystal " + replacedFinish.replace(/_/g, " ") + " " + shape,
     "Neon " + replacedPattern.replace(/_/g, " ") + " " + shape,
@@ -263,6 +262,22 @@ function buildDesign(shape: string, tags: string[], customPrompt?: string, salt?
     "Golden " + replacedPattern.replace(/_/g, " ") + " " + shape,
     "Ethereal " + replacedPattern.replace(/_/g, " ") + " " + shape,
     "Noir " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Phantom " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Celestial " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Shadow " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Lunar " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Cosmic " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Electric " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Silk " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Aurora " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Abyss " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Zen " + capitalize(primaryTag) + " " + shape,
+    "Void " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Rebel " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Dream " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Mirage " + replacedFinish.replace(/_/g, " ") + " " + shape,
+    "Glitch " + replacedPattern.replace(/_/g, " ") + " " + shape,
+    "Warp " + replacedFinish.replace(/_/g, " ") + " " + shape,
   ]) + promptSuffix;
   const description = "A " + replacedFinish + " " + shape + " manicure with " + replacedPattern.replace(/_/g, " ") + " texture, finished in a " + replacedFinish + " sheen.";
   const imagePrompt = "Single detached " + shape + "-shaped press-on nail. " + replacedPattern.replace(/_/g, " ") + " art in " + replacedFinish + " gel polish; palette " + palette.slice(0, 4).join(", ") + "; focal details " + motifs.map((motif) => motif.kind).join(", ") + ". Elegant salon nail art, no hands or fingers.";

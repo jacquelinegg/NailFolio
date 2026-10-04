@@ -183,6 +183,8 @@ const WheelIcon = memo(function WheelIcon({ index, active }: { index: number; ac
 
 export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
   const { t } = useLocale();
+  const spinLabel = t?.notd?.spinning ?? "Spinning...";
+  const spinAgainLabel = t?.notd?.spinAgain ?? "Spin Again";
   const [phase, setPhase] = useState<Phase>("idle");
   const [shape, setShape] = useState<Shape>("almond");
   const [design, setDesign] = useState<NailOfTheDayDesign | null>(null);
@@ -708,7 +710,7 @@ export function NailOfTheDay({ onTryMe }: { onTryMe?: () => void }) {
                     ]}
                   >
                     <Text style={[styles.spinButtonLabel, phase === "spinning" && styles.spinButtonLabelInactive]}>
-                      {phase === "spinning" ? t.notd.spinning : t.notd.spinAgain}
+                      {phase === "spinning" ? spinLabel : spinAgainLabel}
                     </Text>
                     {phase === "spinning" ? (
                       <ActivityIndicator color={palette.ink900} style={styles.spinButtonLoader} />
