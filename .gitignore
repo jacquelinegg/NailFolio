@@ -9,3 +9,8 @@ build/
 next-env.d.ts
 .DS_Store
 npm-debug.log*
+public/*.safetensors
+public/*.bin
+public/*.ckpt
+public/*.pth
+public/*.pt
