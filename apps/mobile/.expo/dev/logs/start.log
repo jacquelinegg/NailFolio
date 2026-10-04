@@ -16263,3 +16263,157 @@
 {"_e":"metro:client_log","_t":1791085133286,"level":"log","data":["[Mobile NOTD] generateNailOfTheDay resolved","{\"design\": {\"colors\": [\"#de0077\", \"#fa0000\", \"#c77a00\"], \"complexity\": \"medium\", \"description\": \"A sheer squoval manicure with lace texture, finished in a sheer sheen.\", \"finish\": \"sheer\", \"imagePrompt\": \"Single detached squoval-shaped press-on nail. lace art in sheer gel polish; palette #de0077, #fa0000, #c77a00; focal details citrus, strawberry, rainbow, star, flower. Elegant salon nail art, no hands or fingers.\", \"layers\": [[Object], [Object]], \"motifs\": [[Object], [Object], [Object], [Object], [Object]], \"name\": \"lace squoval\", \"pattern\": \"lace\", \"shape\": \"squoval\", \"tags\": [\"bold\", \"calm\", \"maximal\", \"minimal\"], \"texture\": \"gloss\"}, \"nailImageUrl\": null}"]}
 {"_e":"metro:client_log","_t":1791085133288,"level":"log","data":["[renderNailArt] clipId:","notd-nail-squoval","nailImageUrl:","null","layers:","2","motifs:","5","texture:","gloss"]}
 {"_e":"metro:client_log","_t":1791085133289,"level":"log","data":["[renderNailArt] colors:","[\"#de0077\", \"#fa0000\", \"#c77a00\"]","base:","#de0077","accent:","#fa0000"]}
+{"_e":"metro:bundling:started","_t":1791100155305,"id":"b","platform":"android","environment":null,"entry":"index.js"}
+{"_e":"metro:bundling:progress","_t":1791100155305,"id":"b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791100155312,"id":"b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791100156305,"id":"b","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1791100156405,"id":"b","progress":0.010000000000000002,"total":3,"current":1}
+{"_e":"metro:bundling:progress","_t":1791100156602,"id":"b","progress":0.04000000000000001,"total":3,"current":2}
+{"_e":"metro:bundling:progress","_t":1791100156706,"id":"b","progress":0.04000000000000001,"total":28,"current":4}
+{"_e":"metro:bundling:progress","_t":1791100156806,"id":"b","progress":0.04000000000000001,"total":40,"current":4}
+{"_e":"metro:bundling:progress","_t":1791100156824,"id":"b","progress":0.04000000000000001,"total":40,"current":5}
+{"_e":"metro:bundling:progress","_t":1791100156924,"id":"b","progress":0.04000000000000001,"total":47,"current":5}
+{"_e":"metro:bundling:progress","_t":1791100157024,"id":"b","progress":0.04000000000000001,"total":47,"current":6}
+{"_e":"metro:bundling:progress","_t":1791100157125,"id":"b","progress":0.04000000000000001,"total":53,"current":6}
+{"_e":"metro:bundling:progress","_t":1791100157274,"id":"b","progress":0.04000000000000001,"total":53,"current":7}
+{"_e":"metro:bundling:progress","_t":1791100157374,"id":"b","progress":0.04000000000000001,"total":57,"current":10}
+{"_e":"metro:bundling:progress","_t":1791100157485,"id":"b","progress":0.08707336737436172,"total":61,"current":18}
+{"_e":"metro:bundling:progress","_t":1791100157585,"id":"b","progress":0.1331263696128561,"total":74,"current":27}
+{"_e":"metro:bundling:progress","_t":1791100157796,"id":"b","progress":0.17084444444444444,"total":75,"current":31}
+{"_e":"metro:bundling:progress","_t":1791100157897,"id":"b","progress":0.17084444444444444,"total":184,"current":42}
+{"_e":"metro:bundling:progress","_t":1791100158016,"id":"b","progress":0.17084444444444444,"total":194,"current":53}
+{"_e":"metro:bundling:progress","_t":1791100158118,"id":"b","progress":0.17084444444444444,"total":201,"current":62}
+{"_e":"metro:bundling:progress","_t":1791100158221,"id":"b","progress":0.17084444444444444,"total":232,"current":69}
+{"_e":"metro:bundling:progress","_t":1791100158330,"id":"b","progress":0.17084444444444444,"total":245,"current":79}
+{"_e":"metro:bundling:progress","_t":1791100158445,"id":"b","progress":0.17084444444444444,"total":252,"current":86}
+{"_e":"metro:bundling:progress","_t":1791100158559,"id":"b","progress":0.17084444444444444,"total":266,"current":97}
+{"_e":"metro:bundling:progress","_t":1791100158660,"id":"b","progress":0.17084444444444444,"total":277,"current":102}
+{"_e":"metro:bundling:progress","_t":1791100158763,"id":"b","progress":0.17084444444444444,"total":283,"current":108}
+{"_e":"metro:bundling:progress","_t":1791100158865,"id":"b","progress":0.17084444444444444,"total":293,"current":116}
+{"_e":"metro:bundling:progress","_t":1791100158964,"id":"b","progress":0.17449126742509213,"total":316,"current":132}
+{"_e":"metro:bundling:progress","_t":1791100159072,"id":"b","progress":0.20085700475907198,"total":328,"current":147}
+{"_e":"metro:bundling:progress","_t":1791100159186,"id":"b","progress":0.2283655728717989,"total":339,"current":162}
+{"_e":"metro:bundling:progress","_t":1791100159286,"id":"b","progress":0.25,"total":354,"current":177}
+{"_e":"metro:bundling:progress","_t":1791100159387,"id":"b","progress":0.279762311317533,"total":363,"current":192}
+{"_e":"metro:bundling:progress","_t":1791100159488,"id":"b","progress":0.3310189528992306,"total":365,"current":210}
+{"_e":"metro:bundling:progress","_t":1791100159591,"id":"b","progress":0.3310189528992306,"total":412,"current":212}
+{"_e":"metro:bundling:progress","_t":1791100159701,"id":"b","progress":0.3310189528992306,"total":442,"current":218}
+{"_e":"metro:bundling:progress","_t":1791100159815,"id":"b","progress":0.3310189528992306,"total":466,"current":234}
+{"_e":"metro:bundling:progress","_t":1791100159950,"id":"b","progress":0.3310189528992306,"total":470,"current":243}
+{"_e":"metro:bundling:progress","_t":1791100160055,"id":"b","progress":0.3310189528992306,"total":487,"current":259}
+{"_e":"metro:bundling:progress","_t":1791100160155,"id":"b","progress":0.3310189528992306,"total":502,"current":269}
+{"_e":"metro:bundling:progress","_t":1791100160262,"id":"b","progress":0.3310189528992306,"total":513,"current":278}
+{"_e":"metro:bundling:progress","_t":1791100160364,"id":"b","progress":0.3310189528992306,"total":523,"current":293}
+{"_e":"metro:bundling:progress","_t":1791100160467,"id":"b","progress":0.3310189528992306,"total":538,"current":303}
+{"_e":"metro:bundling:progress","_t":1791100160582,"id":"b","progress":0.3310189528992306,"total":560,"current":318}
+{"_e":"metro:bundling:progress","_t":1791100160685,"id":"b","progress":0.3310189528992306,"total":591,"current":334}
+{"_e":"metro:bundling:progress","_t":1791100160796,"id":"b","progress":0.3310189528992306,"total":605,"current":348}
+{"_e":"metro:bundling:progress","_t":1791100160897,"id":"b","progress":0.34090530697190424,"total":620,"current":362}
+{"_e":"metro:bundling:progress","_t":1791100161000,"id":"b","progress":0.36654707101225903,"total":626,"current":379}
+{"_e":"metro:bundling:progress","_t":1791100161100,"id":"b","progress":0.3928427056854114,"total":635,"current":398}
+{"_e":"metro:bundling:progress","_t":1791100161200,"id":"b","progress":0.43130718055050565,"total":638,"current":419}
+{"_e":"metro:bundling:progress","_t":1791100161300,"id":"b","progress":0.46197509765625,"total":640,"current":435}
+{"_e":"metro:bundling:progress","_t":1791100161406,"id":"b","progress":0.49878906250000005,"total":640,"current":452}
+{"_e":"metro:bundling:progress","_t":1791100161506,"id":"b","progress":0.5348968982678137,"total":644,"current":471}
+{"_e":"metro:bundling:progress","_t":1791100161606,"id":"b","progress":0.5348968982678137,"total":659,"current":481}
+{"_e":"metro:bundling:progress","_t":1791100161706,"id":"b","progress":0.5529257067718607,"total":663,"current":493}
+{"_e":"metro:bundling:progress","_t":1791100161806,"id":"b","progress":0.5776906145819682,"total":671,"current":510}
+{"_e":"metro:bundling:progress","_t":1791100161906,"id":"b","progress":0.5845135884261764,"total":688,"current":526}
+{"_e":"metro:bundling:progress","_t":1791100162006,"id":"b","progress":0.6215837009031716,"total":690,"current":544}
+{"_e":"metro:bundling:progress","_t":1791100162109,"id":"b","progress":0.633161224489796,"total":700,"current":557}
+{"_e":"metro:bundling:progress","_t":1791100162211,"id":"b","progress":0.647717610718437,"total":707,"current":569}
+{"_e":"metro:bundling:progress","_t":1791100162311,"id":"b","progress":0.668385952933326,"total":718,"current":587}
+{"_e":"metro:bundling:progress","_t":1791100162411,"id":"b","progress":0.6898225308641976,"total":720,"current":598}
+{"_e":"metro:bundling:progress","_t":1791100162516,"id":"b","progress":0.731319857312723,"total":725,"current":620}
+{"_e":"metro:bundling:progress","_t":1791100162626,"id":"b","progress":0.7602699552301969,"total":734,"current":640}
+{"_e":"metro:bundling:progress","_t":1791100162736,"id":"b","progress":0.7602699552301969,"total":766,"current":661}
+{"_e":"metro:bundling:progress","_t":1791100162848,"id":"b","progress":0.7625152921448164,"total":773,"current":675}
+{"_e":"metro:bundling:progress","_t":1791100162966,"id":"b","progress":0.7718553238654193,"total":774,"current":680}
+{"_e":"metro:bundling:progress","_t":1791100163079,"id":"b","progress":0.7802777777777777,"total":780,"current":689}
+{"_e":"metro:bundling:progress","_t":1791100163182,"id":"b","progress":0.7916263065824285,"total":789,"current":702}
+{"_e":"metro:bundling:progress","_t":1791100163286,"id":"b","progress":0.796316108527399,"total":799,"current":713}
+{"_e":"metro:bundling:progress","_t":1791100163389,"id":"b","progress":0.8104489399941542,"total":802,"current":722}
+{"_e":"metro:bundling:progress","_t":1791100163489,"id":"b","progress":0.8266518774287767,"total":804,"current":731}
+{"_e":"metro:bundling:progress","_t":1791100163596,"id":"b","progress":0.8266518774287767,"total":814,"current":739}
+{"_e":"metro:bundling:progress","_t":1791100163700,"id":"b","progress":0.8266518774287767,"total":839,"current":747}
+{"_e":"metro:bundling:progress","_t":1791100163806,"id":"b","progress":0.8266518774287767,"total":847,"current":753}
+{"_e":"metro:bundling:progress","_t":1791100163913,"id":"b","progress":0.8266518774287767,"total":856,"current":765}
+{"_e":"metro:bundling:progress","_t":1791100164051,"id":"b","progress":0.8266518774287767,"total":861,"current":771}
+{"_e":"metro:bundling:progress","_t":1791100164152,"id":"b","progress":0.8266518774287767,"total":863,"current":776}
+{"_e":"metro:bundling:progress","_t":1791100164253,"id":"b","progress":0.8266518774287767,"total":865,"current":786}
+{"_e":"metro:bundling:progress","_t":1791100164354,"id":"b","progress":0.8285398742784652,"total":869,"current":791}
+{"_e":"metro:bundling:progress","_t":1791100164455,"id":"b","progress":0.8357390466515507,"total":874,"current":799}
+{"_e":"metro:bundling:progress","_t":1791100164559,"id":"b","progress":0.8392387945351988,"total":882,"current":808}
+{"_e":"metro:bundling:progress","_t":1791100164669,"id":"b","progress":0.8392387945351988,"total":887,"current":811}
+{"_e":"metro:bundling:progress","_t":1791100164773,"id":"b","progress":0.8440248312260356,"total":898,"current":825}
+{"_e":"metro:bundling:progress","_t":1791100164874,"id":"b","progress":0.8490888577805623,"total":904,"current":833}
+{"_e":"metro:bundling:progress","_t":1791100164977,"id":"b","progress":0.8490888577805623,"total":911,"current":839}
+{"_e":"metro:bundling:progress","_t":1791100165077,"id":"b","progress":0.860794162289501,"total":914,"current":848}
+{"_e":"metro:bundling:progress","_t":1791100165195,"id":"b","progress":0.873286169218741,"total":916,"current":856}
+{"_e":"metro:bundling:progress","_t":1791100165306,"id":"b","progress":0.8860538752362949,"total":920,"current":866}
+{"_e":"metro:bundling:progress","_t":1791100165410,"id":"b","progress":0.8944810159937135,"total":922,"current":872}
+{"_e":"metro:bundling:progress","_t":1791100165511,"id":"b","progress":0.9051693575097145,"total":926,"current":881}
+{"_e":"metro:bundling:progress","_t":1791100165614,"id":"b","progress":0.9155620257200677,"total":927,"current":887}
+{"_e":"metro:bundling:progress","_t":1791100165728,"id":"b","progress":0.9217657032405516,"total":927,"current":890}
+{"_e":"metro:bundling:progress","_t":1791100165828,"id":"b","progress":0.9217657032405516,"total":939,"current":900}
+{"_e":"metro:bundling:progress","_t":1791100165928,"id":"b","progress":0.931306781456478,"total":944,"current":911}
+{"_e":"metro:bundling:progress","_t":1791100166034,"id":"b","progress":0.9519653241198055,"total":946,"current":923}
+{"_e":"metro:bundling:progress","_t":1791100166134,"id":"b","progress":0.978970093282498,"total":946,"current":936}
+{"_e":"metro:bundling:progress","_t":1791100166240,"id":"b","progress":0.989468214525055,"total":947,"current":942}
+{"_e":"metro:bundling:progress","_t":1791100166341,"id":"b","progress":0.9894792946287098,"total":948,"current":943}
+{"_e":"metro:bundling:progress","_t":1791100166441,"id":"b","progress":0.9915789848492942,"total":948,"current":944}
+{"_e":"metro:bundling:progress","_t":1791100167192,"id":"b","progress":0.9936809004967152,"total":948,"current":945}
+{"_e":"metro:bundling:progress","_t":1791100167302,"id":"b","progress":0.9936809004967152,"total":951,"current":947}
+{"_e":"metro:bundling:progress","_t":1791100167441,"id":"b","progress":0.9937008030729731,"total":951,"current":948}
+{"_e":"metro:bundling:progress","_t":1791100168479,"id":"b","progress":0.9957983239735472,"total":951,"current":949}
+{"_e":"metro:bundling:progress","_t":1791100168580,"id":"b","progress":0.9979046627023369,"total":954,"current":953}
+{"_e":"metro:bundling:progress","_t":1791100168711,"id":"b","progress":0.9979046627023369,"total":961,"current":955}
+{"_e":"metro:bundling:progress","_t":1791100168836,"id":"b","progress":0.999,"total":963,"current":963}
+{"_e":"metro:bundling:done","_t":1791100169773,"id":"b","total":963,"ms":14467.5435}
+{"_e":"metro:client_log","_t":1791100202891,"level":"log","data":["[Mobile NOTD] spinWheel start","{\"rotation\": 0, \"spinIndex\": 0}"]}
+{"_e":"metro:client_log","_t":1791100205413,"level":"log","data":["[Mobile NOTD] spin animation complete","{\"rotation\": 1260}"]}
+{"_e":"metro:client_log","_t":1791100212474,"level":"log","data":["[Mobile NOTD] artFill reached, calling generateNailOfTheDay","{\"shape\": \"round\", \"spinIndex\": 1, \"tags\": [\"calm\", \"bold\", \"minimal\", \"maximal\"]}"]}
+{"_e":"metro:client_log","_t":1791100212780,"level":"log","data":["[Mobile NOTD API] generateNailOfTheDay start","{\"salt\": 1, \"shape\": \"round\", \"tags\": [\"bold\", \"calm\", \"maximal\", \"minimal\"]}"]}
+{"_e":"metro:client_log","_t":1791100216646,"level":"log","data":["[Mobile NOTD API] response status","200","in","4794","ms"]}
+{"_e":"metro:client_log","_t":1791100216717,"level":"log","data":["[Mobile NOTD API] payload keys","[\"design\", \"aiGenerated\", \"nailImageUrl\"]","in","4815","ms"]}
+{"_e":"metro:client_log","_t":1791100216717,"level":"log","data":["[Mobile NOTD] generateNailOfTheDay resolved","{\"design\": {\"colors\": [\"#40d5ff\", \"#4066ff\", \"#8740ff\"], \"complexity\": \"simple\", \"description\": \"A matte_overlay round manicure with geometric texture, finished in a matte_overlay sheen.\", \"finish\": \"matte_overlay\", \"imagePrompt\": \"Single detached round-shaped press-on nail. geometric art in matte_overlay gel polish; palette #40d5ff, #4066ff, #8740ff; focal details citrus, strawberry, rainbow, star, flower. Elegant salon nail art, no hands or fingers.\", \"layers\": [[Object], [Object]], \"motifs\": [[Object], [Object], [Object], [Object], [Object]], \"name\": \"geometric round\", \"pattern\": \"geometric\", \"shape\": \"round\", \"tags\": [\"bold\", \"calm\", \"maximal\", \"minimal\"], \"texture\": \"matte\"}, \"nailImageUrl\": null}"]}
+{"_e":"metro:client_log","_t":1791100221720,"level":"log","data":["[renderNailArt] clipId:","notd-nail-round","nailImageUrl:","null","layers:","2","motifs:","5","texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100221776,"level":"log","data":["[renderNailArt] colors:","[\"#40d5ff\", \"#4066ff\", \"#8740ff\"]","base:","#40d5ff","accent:","#4066ff"]}
+{"_e":"metro:client_log","_t":1791100229353,"level":"log","data":["[App][Saved] toggle showSaved:","true"]}
+{"_e":"metro:client_log","_t":1791100229504,"level":"log","data":["[App][ClientShell] rendering SavedNailsScreen, clientTab:","discover"]}
+{"_e":"metro:client_log","_t":1791100229551,"level":"log","data":["[SavedNails] items:","[]"]}
+{"_e":"metro:client_log","_t":1791100229551,"level":"log","data":["[SavedNails] nails:","[]"]}
+{"_e":"metro:client_log","_t":1791100229601,"level":"log","data":["[SavedNails][readSaved] found keys:","3","[\"savedNail::Neon Brutalism::round::#D97757-#0047AB-#DFFF00\", \"savedNail::Neon Serenity::oval::#8A9A86-#FF5E5B-#2D3142-#F4F1DE\", \"savedNail::geometric round::round::#40d5ff-#4066ff-#8740ff\"]"]}
+{"_e":"metro:client_log","_t":1791100229647,"level":"log","data":["[SavedNails][readSaved] parsed key:","Neon Brutalism","shape:","round","palette:","[\"#D97757\", \"#0047AB\", \"#DFFF00\"]","hasDesign:","true","nailImageUrl:","null"]}
+{"_e":"metro:client_log","_t":1791100229647,"level":"log","data":["[SavedNails][readSaved] parsed key:","Neon Serenity","shape:","oval","palette:","[\"#8A9A86\", \"#FF5E5B\", \"#2D3142\", \"#F4F1DE\"]","hasDesign:","true","nailImageUrl:","null"]}
+{"_e":"metro:client_log","_t":1791100229647,"level":"log","data":["[SavedNails][readSaved] parsed key:","geometric round","shape:","round","palette:","[\"#40d5ff\", \"#4066ff\", \"#8740ff\"]","hasDesign:","true","nailImageUrl:","null"]}
+{"_e":"metro:client_log","_t":1791100229647,"level":"log","data":["[SavedNails][readSaved] total items:","3"]}
+{"_e":"metro:client_log","_t":1791100233093,"level":"log","data":["[SavedNails] items:","[\n  {\n    \"name\": \"Neon Brutalism\",\n    \"shape\": \"round\",\n    \"palette\": [\n      \"#D97757\",\n      \"#0047AB\",\n      \"#DFFF00\"\n    ],\n    \"hasDesign\": true,\n    \"nailImageUrl\": null\n  },\n  {\n    \"name\": \"Neon Serenity\",\n    \"shape\": \"oval\",\n    \"palette\": [\n      \"#8A9A86\",\n      \"#FF5E5B\",\n      \"#2D3142\",\n      \"#F4F1DE\"\n    ],\n    \"hasDesign\": true,\n    \"nailImageUrl\": null\n  },\n  {\n    \"name\": \"geometric round\",\n    \"shape\": \"round\",\n    \"palette\": [\n      \"#40d5ff\",\n      \"#4066ff\",\n      \"#8740ff\"\n    ],\n    \"hasDesign\": true,\n    \"nailImageUrl\": null\n  }\n]"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails] nails:","[\n  {\n    \"name\": \"Neon Brutalism\",\n    \"shape\": \"round\",\n    \"palette\": [\n      \"#D97757\",\n      \"#0047AB\",\n      \"#DFFF00\"\n    ]\n  },\n  {\n    \"name\": \"Neon Serenity\",\n    \"shape\": \"oval\",\n    \"palette\": [\n      \"#8A9A86\",\n      \"#FF5E5B\",\n      \"#2D3142\",\n      \"#F4F1DE\"\n    ]\n  },\n  {\n    \"name\": \"geometric round\",\n    \"shape\": \"round\",\n    \"palette\": [\n      \"#40d5ff\",\n      \"#4066ff\",\n      \"#8740ff\"\n    ]\n  }\n]"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails][render] rendering item:","Neon Brutalism","shape:","round","palette:","[\"#D97757\", \"#0047AB\", \"#DFFF00\"]"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails][render] rendering item:","Neon Serenity","shape:","oval","palette:","[\"#8A9A86\", \"#FF5E5B\", \"#2D3142\", \"#F4F1DE\"]"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails][render] rendering item:","geometric round","shape:","round","palette:","[\"#40d5ff\", \"#4066ff\", \"#8740ff\"]"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails][NailPreview] shape:","round","hasDesign:","true","nailImageUrl:","null","pathLen:","74"]}
+{"_e":"metro:client_log","_t":1791100233127,"level":"log","data":["[SavedNails][NailPreview] path:","M 25 110 L 25 60 C 25 35, 75 35, 75 60 L 75 110 C 60 115, 40 115, 25 110 Z"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[SavedNails][NailPreview] preview style:","{\"width\":\"100%\",\"aspectRatio\":0.75}"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[SavedNails][NailPreview] design.layers:","[{\"type\":\"fill\",\"colors\":[\"#D97757\"],\"opacity\":1},{\"type\":\"pattern\",\"pattern\":\"geometric\",\"colors\":[\"#0047AB\"],\"opacity\":0.8},{\"type\":\"fill\",\"pattern\":\"matte_overlay\",\"colors\":[\"#DFFF00\",\"#D97757\"],\"opacity\":0.85}]"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[SavedNails][NailPreview] design.motifs:","[{\"kind\":\"sparkle\",\"x\":50,\"y\":40,\"size\":8,\"color\":\"#DFFF00\",\"rotation\":15,\"role\":\"focal\"},{\"kind\":\"sparkle\",\"x\":35,\"y\":70,\"size\":5,\"color\":\"#0047AB\",\"rotation\":-20,\"role\":\"support\"},{\"kind\":\"star\",\"x\":65,\"y\":30,\"size\":3.5,\"color\":\"#D97757\",\"rotation\":10,\"role\":\"micro\"}]"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[SavedNails][NailPreview] design.texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[renderNailArt] clipId:","saved-nail-round","nailImageUrl:","null","layers:","3","motifs:","3","texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233131,"level":"log","data":["[renderNailArt] colors:","[\"#D97757\", \"#0047AB\", \"#DFFF00\"]","base:","#D97757","accent:","#0047AB"]}
+{"_e":"metro:client_log","_t":1791100233199,"level":"log","data":["[SavedNails][NailPreview] shape:","oval","hasDesign:","true","nailImageUrl:","null","pathLen:","74"]}
+{"_e":"metro:client_log","_t":1791100233247,"level":"log","data":["[SavedNails][NailPreview] path:","M 25 110 L 25 50 C 25 20, 75 20, 75 50 L 75 110 C 60 115, 40 115, 25 110 Z"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[SavedNails][NailPreview] preview style:","{\"width\":\"100%\",\"aspectRatio\":0.75}"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[SavedNails][NailPreview] design.layers:","[{\"type\":\"fill\",\"colors\":[\"#8A9A86\"],\"opacity\":1},{\"type\":\"fill\",\"pattern\":\"matte_overlay\",\"colors\":[\"#2D3142\",\"#8A9A86\"],\"opacity\":0.85}]"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[SavedNails][NailPreview] design.motifs:","[{\"kind\":\"sparkle\",\"x\":45,\"y\":35,\"size\":8,\"color\":\"#FF5E5B\",\"rotation\":15,\"role\":\"focal\"},{\"kind\":\"leaf\",\"x\":30,\"y\":65,\"size\":6.5,\"color\":\"#8A9A86\",\"rotation\":-25,\"role\":\"support\"},{\"kind\":\"star\",\"x\":65,\"y\":75,\"size\":4,\"color\":\"#2D3142\",\"rotation\":10,\"role\":\"micro\"}]"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[SavedNails][NailPreview] design.texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[renderNailArt] clipId:","saved-nail-oval","nailImageUrl:","null","layers:","2","motifs:","3","texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233248,"level":"log","data":["[renderNailArt] colors:","[\"#8A9A86\", \"#FF5E5B\", \"#2D3142\", \"#F4F1DE\"]","base:","#8A9A86","accent:","#FF5E5B"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] shape:","round","hasDesign:","true","nailImageUrl:","null","pathLen:","74"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] path:","M 25 110 L 25 60 C 25 35, 75 35, 75 60 L 75 110 C 60 115, 40 115, 25 110 Z"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] preview style:","{\"width\":\"100%\",\"aspectRatio\":0.75}"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] design.layers:","[{\"type\":\"fill\",\"colors\":[\"#40d5ff\"],\"opacity\":1},{\"type\":\"pattern\",\"pattern\":\"geometric\",\"colors\":[\"#4066ff\"],\"opacity\":0.85}]"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] design.motifs:","[{\"kind\":\"citrus\",\"role\":\"focal\",\"x\":73,\"y\":69,\"size\":3,\"color\":\"#8740ff\",\"rotation\":32},{\"kind\":\"strawberry\",\"role\":\"support\",\"x\":30,\"y\":32,\"size\":4,\"color\":\"#40d5ff\",\"rotation\":0},{\"kind\":\"rainbow\",\"role\":\"support\",\"x\":47,\"y\":55,\"size\":5,\"color\":\"#4066ff\",\"rotation\":13},{\"kind\":\"star\",\"role\":\"micro\",\"x\":64,\"y\":78,\"size\":6,\"color\":\"#8740ff\",\"rotation\":26},{\"kind\":\"flower\",\"role\":\"micro\",\"x\":21,\"y\":41,\"size\":7,\"color\":\"#40d5ff\",\"rotation\":39}]"]}
+{"_e":"metro:client_log","_t":1791100233274,"level":"log","data":["[SavedNails][NailPreview] design.texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233284,"level":"log","data":["[renderNailArt] clipId:","saved-nail-round","nailImageUrl:","null","layers:","2","motifs:","5","texture:","matte"]}
+{"_e":"metro:client_log","_t":1791100233285,"level":"log","data":["[renderNailArt] colors:","[\"#40d5ff\", \"#4066ff\", \"#8740ff\"]","base:","#40d5ff","accent:","#4066ff"]}
